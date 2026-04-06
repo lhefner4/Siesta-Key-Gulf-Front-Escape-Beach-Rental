@@ -59,7 +59,9 @@ export const propertyData = {
     { periodStart: "Nov 21, 2026", periodEnd: "Dec 5, 2026", dailyRate: "$550", weeklyRate: "$3,850", monthlyRate: "—", minNights: "0" },
     { periodStart: "Dec 6, 2026", periodEnd: "Dec 18, 2026", dailyRate: "$495", weeklyRate: "$3,467", monthlyRate: "—", minNights: "0" },
     { periodStart: "Dec 19, 2026", periodEnd: "Jan 2, 2027", dailyRate: "$550", weeklyRate: "$3,850", monthlyRate: "—", minNights: "0" },
-    { periodStart: "Jan 3, 2027", periodEnd: "Mar 19, 2027", dailyRate: "$495", weeklyRate: "$3,467", monthlyRate: "—", minNights: "0" }
+    { periodStart: "Jan 3, 2027", periodEnd: "Mar 19, 2027", dailyRate: "$495", weeklyRate: "$3,467", monthlyRate: "—", minNights: "0" },
+    { periodStart: "Mar 20, 2027", periodEnd: "Apr 3, 2027", dailyRate: "$550", weeklyRate: "$3,850", monthlyRate: "—", minNights: "0" },
+    { periodStart: "Apr 4, 2027", periodEnd: "Apr 30, 2027", dailyRate: "$495", weeklyRate: "$3,465", monthlyRate: "—", minNights: "0" }
   ],
 
   additionalFees: {
