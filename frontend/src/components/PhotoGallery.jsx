@@ -11,10 +11,10 @@ const PhotoGallery = () => {
 
   const galleries = {
     outside: { title: 'Outside Views', images: propertyData.images.outsideViews },
-    bedrooms: { title: 'Bedrooms & Bathrooms', images: propertyData.images.bedrooms },
-    kitchen: { title: 'Kitchen & Dining', images: propertyData.images.kitchen },
     living: { title: 'Living Areas', images: propertyData.images.livingRoom },
-    guest: { title: 'Guest Photos', images: propertyData.images.guestPhotos }
+    kitchen: { title: 'Kitchen & Dining', images: propertyData.images.kitchen },
+    bedrooms: { title: 'Master Bedroom', images: propertyData.images.bedrooms },
+    guest: { title: 'Guest Bedroom', images: propertyData.images.guestBedroom }
   };
 
   const openLightbox = (image, index) => {
@@ -60,17 +60,17 @@ const PhotoGallery = () => {
             <TabsTrigger value="outside" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
               Outside Views
             </TabsTrigger>
-            <TabsTrigger value="bedrooms" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
-              Bedrooms
+            <TabsTrigger value="living" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+              Living Room
             </TabsTrigger>
             <TabsTrigger value="kitchen" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
               Kitchen
             </TabsTrigger>
-            <TabsTrigger value="living" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
-              Living Room
+            <TabsTrigger value="bedrooms" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
+              Master Bedroom
             </TabsTrigger>
             <TabsTrigger value="guest" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
-              Guest Photos
+              Guest Bedroom
             </TabsTrigger>
           </TabsList>
 
@@ -100,11 +100,7 @@ const PhotoGallery = () => {
               ) : (
                 <Card className="border-2 border-dashed border-slate-300 bg-slate-50">
                   <CardContent className="p-12 text-center">
-                    <p className="text-slate-500 text-lg">
-                      {key === 'guest' 
-                        ? 'Guest photos will appear here. Share your memories with us!'
-                        : 'Photos coming soon'}
-                    </p>
+                    <p className="text-slate-500 text-lg">Photos coming soon</p>
                   </CardContent>
                 </Card>
               )}

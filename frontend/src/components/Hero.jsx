@@ -45,7 +45,7 @@ const Hero = () => {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-sky-50 font-light max-w-2xl mx-auto leading-relaxed">
-            Experience luxury beachfront living with stunning sunset views, world-class amenities, and steps from the powdery white sands
+            Soak up beachfront living with gorgeous sunset views, plenty of great amenities, and the powdery white sands of Siesta Key right outside your door.
           </p>
 
           {/* Features */}

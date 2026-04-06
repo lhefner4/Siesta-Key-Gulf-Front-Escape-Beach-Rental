@@ -8,7 +8,7 @@ const PropertyDetails = () => {
     { icon: Bed, label: 'Bedrooms', value: '2' },
     { icon: Bath, label: 'Bathrooms', value: '2' },
     { icon: Home, label: 'Unit', value: 'G-201' },
-    { icon: Waves, label: 'Beach Access', value: 'Direct' }
+    { icon: Waves, label: 'Beach Access', value: 'Private' }
   ];
 
   return (
@@ -33,7 +33,7 @@ const PropertyDetails = () => {
                 <div className="w-12 h-12 bg-sky-50 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:bg-sky-100 transition-colors">
                   <fact.icon className="text-sky-600" size={24} />
                 </div>
-                <p className="text-2xl font-bold text-slate-900 mb-1">{fact.value}</p>
+                {fact.value && <p className="text-2xl font-bold text-slate-900 mb-1">{fact.value}</p>}
                 <p className="text-sm text-slate-600">{fact.label}</p>
               </CardContent>
             </Card>

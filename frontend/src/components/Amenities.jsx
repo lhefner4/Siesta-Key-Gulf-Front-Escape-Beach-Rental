@@ -25,7 +25,7 @@ const Amenities = () => {
             <span className="text-sky-600"> Amenities</span>
           </h2>
           <p className="text-lg text-slate-600">
-            Experience luxury living with world-class facilities designed for your comfort and enjoyment
+            Beyond your front door, you'll find everything you need to recharge, stay active, and feel right at home.
           </p>
         </div>
 

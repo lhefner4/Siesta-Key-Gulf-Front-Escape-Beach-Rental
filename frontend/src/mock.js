@@ -15,8 +15,8 @@ export const propertyData = {
   },
 
   contact: {
-    email: "info@siestakeygulffrontescape.com",
-    phone: "(555) 123-4567"
+    email: "teri.excelsior201g@gmail.com",
+    phone: "215-768-4589"
   },
 
   amenities: {
@@ -65,7 +65,7 @@ export const propertyData = {
   additionalFees: {
     securityDeposit: "$1,000",
     processingFee: "$150",
-    touristTax: "13% of rental",
+    touristTax: "13%",
     cleaningFee: "$190"
   },
 
@@ -116,47 +116,54 @@ export const propertyData = {
 
   // PLACEHOLDER IMAGES - Replace these URLs with your actual property photos
   // Organized by category for easy management
+  // Drop your photos into frontend/public/images/<category>/ and update the paths below
   images: {
-    hero: "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=1600&q=80", // Gulf front view
-    
+    hero: "/images/outside/hero.jpg", // 16:9 or wider — best gulf/exterior shot
+
     outsideViews: [
-      "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=800&q=80", // Beach view
-      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80", // Pool area
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80", // Building exterior
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80", // Sunset view
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80", // Beach scene
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80"  // Balcony view
+      "/images/outside/outside-1.jpg", // Beach view
+      "/images/outside/outside-2.jpg", // Pool area
+      "/images/outside/outside-3.jpg", // Building exterior
+      "/images/outside/outside-4.jpg", // Sunset view
+      "/images/outside/outside-5.jpg", // Beach scene
+      "/images/outside/outside-6.jpg"  // Balcony view
     ],
-    
+
     bedrooms: [
-      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80", // Master bedroom
-      "https://images.unsplash.com/photo-1578898887119-68e5086a4e2c?w=800&q=80", // Second bedroom
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80", // Bedroom detail
-      "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&q=80", // Bathroom
-      "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80", // Master bath
-      "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"  // Bedroom view
+      "/images/bedrooms/bedroom-1.jpg", // Master bedroom
+      "/images/bedrooms/bedroom-2.jpg", // Guest bedroom
+      "/images/bedrooms/bedroom-3.jpg", // Bedroom detail
+      "/images/bedrooms/bedroom-4.jpg", // Bathroom
+      "/images/bedrooms/bedroom-5.jpg", // Master bath
+      "/images/bedrooms/bedroom-6.jpg"  // Bedroom with view
     ],
-    
+
     kitchen: [
-      "https://images.unsplash.com/photo-1556912173-46c336c7fd55?w=800&q=80", // Kitchen overview
-      "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80", // Kitchen detail
-      "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=800&q=80", // Dining area
-      "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=800&q=80", // Kitchen appliances
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80", // Breakfast bar
-      "https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?w=800&q=80"  // Kitchen counter
+      "/images/kitchen/kitchen-1.jpg", // Kitchen overview
+      "/images/kitchen/kitchen-2.jpg", // Kitchen detail
+      "/images/kitchen/kitchen-3.jpg", // Dining area
+      "/images/kitchen/kitchen-4.jpg", // Appliances
+      "/images/kitchen/kitchen-5.jpg", // Breakfast bar
+      "/images/kitchen/kitchen-6.jpg"  // Kitchen counter
     ],
-    
+
     livingRoom: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80", // Living room
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80", // Living space
-      "https://images.unsplash.com/photo-1615873968403-89e068629265?w=800&q=80", // Seating area
-      "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&q=80", // Living detail
-      "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80", // Interior view
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"  // Open floor plan
+      "/images/living-room/living-room-1.jpg", // Main living room
+      "/images/living-room/living-room-2.jpg", // Seating area
+      "/images/living-room/living-room-3.jpg", // Living room detail
+      "/images/living-room/living-room-4.jpg", // Open floor plan
+      "/images/living-room/living-room-5.jpg", // Interior with natural light
+      "/images/living-room/living-room-6.jpg"  // Living room toward balcony
     ],
-    
-    // Guest photos section will be empty initially - placeholder for user-submitted photos
-    guestPhotos: []
+
+    guestBedroom: [
+      "/images/guest-bedroom/guest-bedroom-1.jpg",
+      "/images/guest-bedroom/guest-bedroom-2.jpg",
+      "/images/guest-bedroom/guest-bedroom-3.jpg",
+      "/images/guest-bedroom/guest-bedroom-4.jpg",
+      "/images/guest-bedroom/guest-bedroom-5.jpg",
+      "/images/guest-bedroom/guest-bedroom-6.jpg"
+    ]
   },
 
   // Booked dates for calendar (mock data - you'll update this manually)
