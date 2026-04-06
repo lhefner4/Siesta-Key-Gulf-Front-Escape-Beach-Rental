@@ -34,27 +34,19 @@ const PricingSection = () => {
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-slate-50">
-                      <TableHead className="font-bold">Period Start</TableHead>
-                      <TableHead className="font-bold">Period End</TableHead>
-                      <TableHead className="font-bold">Daily Rate</TableHead>
-                      <TableHead className="font-bold">Weekly Rate</TableHead>
-                      <TableHead className="font-bold">Monthly Rate</TableHead>
-                      <TableHead className="font-bold">Min. Nights</TableHead>
+                      <TableHead className="font-bold text-slate-700">Period Start</TableHead>
+                      <TableHead className="font-bold text-slate-700">Period End</TableHead>
+                      <TableHead className="font-bold text-slate-700 text-right">Daily Rate</TableHead>
+                      <TableHead className="font-bold text-slate-700 text-right">Weekly Rate</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {propertyData.rentalRates.map((rate, index) => (
-                      <TableRow key={index} className="hover:bg-sky-50 transition-colors">
-                        <TableCell className="font-medium">{rate.periodStart}</TableCell>
-                        <TableCell>{rate.periodEnd}</TableCell>
-                        <TableCell className="text-sky-700 font-semibold">{rate.dailyRate}</TableCell>
-                        <TableCell className="text-sky-700 font-semibold">{rate.weeklyRate}</TableCell>
-                        <TableCell>{rate.monthlyRate}</TableCell>
-                        <TableCell className="text-center">
-                          <span className="inline-block px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-sm font-medium">
-                            {rate.minNights === "0" ? "Flexible" : `${rate.minNights} nights`}
-                          </span>
-                        </TableCell>
+                      <TableRow key={index} className={`hover:bg-sky-50 transition-colors ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}`}>
+                        <TableCell className="font-medium text-slate-800">{rate.periodStart}</TableCell>
+                        <TableCell className="text-slate-700">{rate.periodEnd}</TableCell>
+                        <TableCell className="text-sky-700 font-semibold text-right">{rate.dailyRate}</TableCell>
+                        <TableCell className="text-sky-700 font-semibold text-right">{rate.weeklyRate}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

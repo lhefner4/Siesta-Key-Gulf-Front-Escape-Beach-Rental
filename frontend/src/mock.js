@@ -52,16 +52,16 @@ export const propertyData = {
   },
 
   rentalRates: [
-    { periodStart: "Jan 22, 2026", periodEnd: "Apr 30, 2026", dailyRate: "—", weeklyRate: "$3,210", monthlyRate: "—", minNights: "14" },
-    { periodStart: "May 1, 2026", periodEnd: "Jun 18, 2026", dailyRate: "$326", weeklyRate: "$2,284", monthlyRate: "—", minNights: "14" },
-    { periodStart: "Jun 19, 2026", periodEnd: "Jun 26, 2026", dailyRate: "$495", weeklyRate: "$3,467", monthlyRate: "—", minNights: "14" },
-    { periodStart: "Jun 27, 2026", periodEnd: "Jul 11, 2026", dailyRate: "$550", weeklyRate: "$3,850", monthlyRate: "—", minNights: "14" },
-    { periodStart: "Nov 21, 2026", periodEnd: "Dec 5, 2026", dailyRate: "$550", weeklyRate: "$3,850", monthlyRate: "—", minNights: "0" },
-    { periodStart: "Dec 6, 2026", periodEnd: "Dec 18, 2026", dailyRate: "$495", weeklyRate: "$3,467", monthlyRate: "—", minNights: "0" },
-    { periodStart: "Dec 19, 2026", periodEnd: "Jan 2, 2027", dailyRate: "$550", weeklyRate: "$3,850", monthlyRate: "—", minNights: "0" },
-    { periodStart: "Jan 3, 2027", periodEnd: "Mar 19, 2027", dailyRate: "$495", weeklyRate: "$3,467", monthlyRate: "—", minNights: "0" },
-    { periodStart: "Mar 20, 2027", periodEnd: "Apr 3, 2027", dailyRate: "$550", weeklyRate: "$3,850", monthlyRate: "—", minNights: "0" },
-    { periodStart: "Apr 4, 2027", periodEnd: "Apr 30, 2027", dailyRate: "$495", weeklyRate: "$3,465", monthlyRate: "—", minNights: "0" }
+    { periodStart: "Jan 22, 2026", periodEnd: "Apr 30, 2026", dailyRate: "—", weeklyRate: "$3,210" },
+    { periodStart: "May 1, 2026", periodEnd: "Jun 18, 2026", dailyRate: "$326", weeklyRate: "$2,284" },
+    { periodStart: "Jun 19, 2026", periodEnd: "Jun 26, 2026", dailyRate: "$495", weeklyRate: "$3,467" },
+    { periodStart: "Jun 27, 2026", periodEnd: "Jul 11, 2026", dailyRate: "$550", weeklyRate: "$3,850" },
+    { periodStart: "Nov 21, 2026", periodEnd: "Dec 5, 2026", dailyRate: "$550", weeklyRate: "$3,850" },
+    { periodStart: "Dec 6, 2026", periodEnd: "Dec 18, 2026", dailyRate: "$495", weeklyRate: "$3,467" },
+    { periodStart: "Dec 19, 2026", periodEnd: "Jan 2, 2027", dailyRate: "$550", weeklyRate: "$3,850" },
+    { periodStart: "Jan 3, 2027", periodEnd: "Mar 19, 2027", dailyRate: "$495", weeklyRate: "$3,467" },
+    { periodStart: "Mar 20, 2027", periodEnd: "Apr 3, 2027", dailyRate: "$550", weeklyRate: "$3,850" },
+    { periodStart: "Apr 4, 2027", periodEnd: "Apr 30, 2027", dailyRate: "$495", weeklyRate: "$3,465" }
   ],
 
   additionalFees: {
