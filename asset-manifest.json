@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Siesta-Key-Gulf-Front-Escape-Beach-Rental/static/css/main.a9348ffe.css",
+    "main.js": "/Siesta-Key-Gulf-Front-Escape-Beach-Rental/static/js/main.db410e11.js",
+    "index.html": "/Siesta-Key-Gulf-Front-Escape-Beach-Rental/index.html",
+    "main.a9348ffe.css.map": "/Siesta-Key-Gulf-Front-Escape-Beach-Rental/static/css/main.a9348ffe.css.map",
+    "main.db410e11.js.map": "/Siesta-Key-Gulf-Front-Escape-Beach-Rental/static/js/main.db410e11.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9348ffe.css",
+    "static/js/main.db410e11.js"
+  ]
+}
