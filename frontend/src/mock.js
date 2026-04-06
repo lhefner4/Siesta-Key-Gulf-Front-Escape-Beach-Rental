@@ -94,7 +94,7 @@ export const propertyData = {
     },
     {
       title: "Early Departure",
-      description: "No refunds will be issued for early departure under any circumstances."
+      description: "No refunds will be issued for early departure."
     }
   ],
 
