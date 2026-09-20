@@ -55,5 +55,4 @@ Single-page app using smooth-scroll navigation (no client-side routing). `App.js
 Google Calendar's all-day `DTEND` is exclusive (one day past what the UI shows); the sync script corrects for that so `bookedDates.json`'s `end` stays inclusive, matching how `AvailabilityCalendar.jsx` walks the range.
 
 ## TODO
-- `FORMSPREE_FORM_ID` in `ContactForm.jsx` is still a placeholder (`'REPLACE_ME'`). Sign up free at formspree.io, connect the property inbox (`teri.excelsior201g@gmail.com` per `mock.js`), create a form, and paste the real form ID in. Until then the contact form fails on submit.
-- `GCAL_ICS_URL` repo secret needs to be set (Settings → Secrets and variables → Actions) before the booking sync workflow can run. Value comes from the tracking Google Calendar's Settings → "Integrate calendar" → "Secret address in iCal format".
+All setup items complete as of 2026-09-20 — `FORMSPREE_FORM_ID` is a real form ID and `GCAL_ICS_URL` is set as a repo secret.
