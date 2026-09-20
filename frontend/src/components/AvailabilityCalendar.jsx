@@ -65,7 +65,9 @@ const AvailabilityCalendar = () => {
                     onSelect={setSelectedMonth}
                     month={selectedMonth}
                     onMonthChange={setSelectedMonth}
-                    className="rounded-md border-0"
+                    showOutsideDays={false}
+                    hideWeekdays
+                    className="rounded-md border-0 mx-auto w-fit"
                     modifiers={{
                       booked: bookedDates
                     }}
@@ -77,7 +79,7 @@ const AvailabilityCalendar = () => {
                       }
                     }}
                   />
-                  
+
                   {/* Legend */}
                   <div className="flex flex-wrap gap-6 mt-6 pt-6 border-t border-slate-200">
                     <div className="flex items-center gap-2">
