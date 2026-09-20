@@ -14,26 +14,28 @@ function Calendar({
   classNames,
   showOutsideDays = true,
   hideWeekdays = false,
+  navLayout = "around",
   ...props
 }) {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
       hideWeekdays={hideWeekdays}
+      navLayout={navLayout}
       className={cn("p-3", className)}
       classNames={{
-        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
-        month: "space-y-4",
-        month_caption: "flex justify-center pt-1 relative items-center",
+        months: "flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-x-4 sm:space-y-0",
+        month: "space-y-4 relative",
+        month_caption: "flex justify-center pt-1 items-center",
         caption_label: "text-sm font-medium",
         nav: "space-x-1 flex items-center",
         button_previous: cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-1"
+          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-1 top-1"
         ),
         button_next: cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute right-1"
+          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute right-1 top-1"
         ),
         month_grid: "w-full border-collapse space-y-1",
         weekdays: "flex",
@@ -48,8 +50,9 @@ function Calendar({
         ),
         range_start: "rounded-l-md",
         range_end: "rounded-r-md",
-        selected:
-          "[&>button]:bg-primary [&>button]:text-primary-foreground [&>button]:hover:bg-primary [&>button]:hover:text-primary-foreground [&>button]:focus:bg-primary [&>button]:focus:text-primary-foreground rounded-md",
+        // Intentionally no styling: this calendar is browse-only, clicking a
+        // day shouldn't visually highlight it.
+        selected: "",
         today: "[&>button]:bg-accent [&>button]:text-accent-foreground",
         outside: "text-muted-foreground",
         disabled: "text-muted-foreground opacity-50",

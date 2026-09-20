@@ -67,7 +67,7 @@ const AvailabilityCalendar = () => {
                     onMonthChange={setSelectedMonth}
                     showOutsideDays={false}
                     hideWeekdays
-                    className="rounded-md border-0 mx-auto w-fit"
+                    className="rounded-md border-0"
                     modifiers={{
                       booked: bookedDates
                     }}
