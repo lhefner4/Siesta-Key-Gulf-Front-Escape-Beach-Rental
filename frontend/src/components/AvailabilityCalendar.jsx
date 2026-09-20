@@ -132,13 +132,6 @@ const AvailabilityCalendar = () => {
               </Card>
             </div>
           </div>
-
-          {/* Note for owners */}
-          <div className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-            <p className="text-sm text-yellow-800">
-              <strong>Note for Owner:</strong> Booked dates are currently set in the mock.js file. You can easily update the "bookedDates" array to reflect your actual bookings.
-            </p>
-          </div>
         </div>
       </div>
     </section>
