@@ -76,7 +76,11 @@ export const propertyData = {
   },
 
   rentalInfo: {
-    minimumStay: "14-night minimum stay is required (no set check-in day)",
+    minimumStay: [
+      "1-week minimum stay is required May 1st – Oct 31st",
+      "2-week minimum stay is required Nov 1st – April 30th",
+      "*No set check-in days*"
+    ],
     oddDays: "Odd days are pro-rated at the daily rate",
     uponBooking: "25% of total rental fee plus the $150 processing fee and executed rental agreement are required to secure the reservation",
     balanceDue: "Remaining rent, all applicable taxes, cleaning fee ($190), and security deposit ($1,000) must be paid in full 90 days prior to arrival",

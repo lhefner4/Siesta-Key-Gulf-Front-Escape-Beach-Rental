@@ -108,7 +108,9 @@ const AvailabilityCalendar = () => {
                 <CardContent className="p-6 space-y-4">
                   <div>
                     <h4 className="font-semibold text-slate-900 mb-2">Minimum Stay</h4>
-                    <p className="text-sm text-slate-600">{propertyData.rentalInfo.minimumStay}</p>
+                    {propertyData.rentalInfo.minimumStay.map((line, i) => (
+                      <p key={i} className="text-sm text-slate-600">{line}</p>
+                    ))}
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900 mb-2">Odd Days</h4>
