@@ -1,6 +1,8 @@
 // Mock data for Siesta Key Gulf Front Escape
 // EASY IMAGE SWAPPING: Simply replace the URLs below with your actual property photos
 
+import bookedDates from './bookedDates.json';
+
 const p = process.env.PUBLIC_URL || '';
 
 export const propertyData = {
@@ -162,11 +164,6 @@ export const propertyData = {
     ]
   },
 
-  // Booked dates for calendar (mock data - you'll update this manually)
-  bookedDates: [
-    { start: "2026-02-14", end: "2026-02-28" },
-    { start: "2026-03-15", end: "2026-04-05" },
-    { start: "2026-06-20", end: "2026-07-10" },
-    { start: "2026-12-20", end: "2027-01-03" }
-  ]
+  // Synced from Google Calendar by scripts/sync-bookings.mjs — see bookedDates.json
+  bookedDates
 };

@@ -1,0 +1,8 @@
+{
+  "name": "sync-bookings",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "node-ical": "^0.20.1"
+  }
+}
