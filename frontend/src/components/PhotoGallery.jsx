@@ -107,13 +107,6 @@ const PhotoGallery = () => {
             </TabsContent>
           ))}
         </Tabs>
-
-        {/* Note about image swapping */}
-        <div className="mt-8 text-center">
-          <p className="text-sm text-slate-500 italic">
-            📸 Placeholder images shown. Actual property photos will be added soon.
-          </p>
-        </div>
       </div>
 
       {/* Lightbox Modal */}
