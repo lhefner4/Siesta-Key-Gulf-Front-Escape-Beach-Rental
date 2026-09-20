@@ -18,9 +18,20 @@ const run = async () => {
 
   console.error(`DEBUG: ${all.length} calendar component(s), ${vevents.length} VEVENT(s)`);
   vevents.forEach((event, i) => {
+    let occCount = '';
+    if (event.rrule) {
+      try {
+        occCount = event.rrule.all().length;
+      } catch {
+        occCount = 'unbounded/error';
+      }
+    }
     console.error(
       `DEBUG [${i}] allDay=${event.start?.dateOnly === true}` +
       ` recurring=${!!event.rrule}` +
+      ` rrule=${event.rrule ? event.rrule.toString() : ''}` +
+      ` occurrences=${occCount}` +
+      ` recurrenceId=${event.recurrenceid ? event.recurrenceid.toISOString() : ''}` +
       ` status=${event.status || ''}` +
       ` start=${event.start?.toISOString?.()}` +
       ` end=${event.end?.toISOString?.()}`
