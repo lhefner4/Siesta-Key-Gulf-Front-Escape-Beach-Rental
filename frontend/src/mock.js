@@ -108,17 +108,17 @@ export const propertyData = {
 
   testimonials: [
     {
-      name: "Bill Gustafson",
+      name: "Bill G.",
       text: "Siesta Key Gulf Front Escape truly is our Happy Place! The condo offers stunning sunset views from the balcony, overlooking the pool and hot tub area below. It's the perfect spot to relax with a drink in hand as the sun dips into the Gulf. The property is beautifully maintained, with a heated pool just steps from the powdery white sands of Siesta Key Beach. Inside, the condo is spotless, tastefully furnished, and fully equipped with all the comforts of home. You can tell the owners care about their guests—their communication is quick, kind, and welcoming. We also love the extra amenities this property offers, like the exercise room and pickleball courts, which make it easy to stay active between beach days. Every visit reminds us why we keep coming back—Siesta Key Gulf Front Escape is the perfect blend of comfort, relaxation, and beachside paradise.",
       rating: 5
     },
     {
-      name: "Tina Hutnyk",
+      name: "Tina H.",
       text: "This place is truly paradise. The condo is beautifully decorated and the accommodations are excellent. Everything you need for a relaxing beach vacation is there waiting for you. The condo is well equipped if you choose to stay in for meals and just a short trolly ride into the village for additional dining options. There are also places within walking distance. The owner is easily accessible and responds quickly to questions and concerns. We absolutely love this condo and plan to return year after year!",
       rating: 5
     },
     {
-      name: "Jennifer Szczesniak",
+      name: "Jennifer S.",
       text: "Wonderful condo, awesome views, easy access to everything, warm pool, hot tub is nice and hot, owners are very attentive. The beach is FABULOUS! You will not regret renting this condo and will want to book again. My family and I have been guests at this condo for 3 Christmas vacations and 1 spring break and we look forward to each visit.",
       rating: 5
     }
@@ -137,6 +137,10 @@ export const propertyData = {
       `${p}/images/outside/outside-4.jpg`,
       `${p}/images/outside/outside-5.jpg`,
       `${p}/images/outside/outside-6.jpg`,
+      `${p}/images/outside/outside-7.jpg`,
+      `${p}/images/outside/outside-8.jpg`,
+      `${p}/images/outside/outside-9.jpg`,
+      `${p}/images/outside/outside-10.jpg`,
     ],
 
     bedrooms: [
@@ -165,6 +169,7 @@ export const propertyData = {
     guestBedroom: [
       `${p}/images/guest-bedroom/guest-bedroom-1.jpg`,
       `${p}/images/guest-bedroom/guest-bedroom-2.jpg`,
+      `${p}/images/guest-bedroom/guest-bedroom-3.jpg`,
     ]
   },
 
