@@ -13,34 +13,22 @@ const toISODate = (date) => date.toISOString().slice(0, 10);
 
 const run = async () => {
   const events = await ical.async.fromURL(ICS_URL);
-  const all = Object.values(events);
-  const vevents = all.filter((event) => event.type === 'VEVENT');
-
-  console.error(`DEBUG: ${all.length} calendar component(s), ${vevents.length} VEVENT(s)`);
-  vevents.forEach((event, i) => {
-    let occCount = '';
-    if (event.rrule) {
-      try {
-        occCount = event.rrule.all().length;
-      } catch {
-        occCount = 'unbounded/error';
-      }
-    }
-    console.error(
-      `DEBUG [${i}] allDay=${event.start?.dateOnly === true}` +
-      ` recurring=${!!event.rrule}` +
-      ` rrule=${event.rrule ? event.rrule.toString() : ''}` +
-      ` occurrences=${occCount}` +
-      ` recurrenceId=${event.recurrenceid ? event.recurrenceid.toISOString() : ''}` +
-      ` status=${event.status || ''}` +
-      ` start=${event.start?.toISOString?.()}` +
-      ` end=${event.end?.toISOString?.()}`
-    );
-  });
+  const vevents = Object.values(events).filter((event) => event.type === 'VEVENT');
 
   const bookings = vevents
     .filter((event) => event.start && event.end)
     .map((event) => {
+      if (event.rrule) {
+        // Some bookings on this calendar got saved as a daily-repeating
+        // all-day series (FREQ=DAILY;UNTIL=...) instead of one spanning
+        // event — each occurrence is its own booked day, so the real
+        // range is first occurrence through last occurrence, inclusive.
+        const occurrences = event.rrule.all((date, i) => i < 366);
+        const start = occurrences[0];
+        const end = occurrences[occurrences.length - 1];
+        return { start: toISODate(start), end: toISODate(end) };
+      }
+
       const isAllDay = event.start.dateOnly === true;
       const start = new Date(event.start);
       const end = new Date(event.end);
@@ -53,6 +41,8 @@ const run = async () => {
       return { start: toISODate(start), end: toISODate(end) };
     })
     .sort((a, b) => a.start.localeCompare(b.start));
+
+  console.error(`Parsed ${vevents.length} calendar event(s) into ${bookings.length} booking range(s).`);
 
   const outPath = path.join(
     path.dirname(fileURLToPath(import.meta.url)),
