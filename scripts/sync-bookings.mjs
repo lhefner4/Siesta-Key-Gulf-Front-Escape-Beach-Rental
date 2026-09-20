@@ -13,9 +13,22 @@ const toISODate = (date) => date.toISOString().slice(0, 10);
 
 const run = async () => {
   const events = await ical.async.fromURL(ICS_URL);
+  const all = Object.values(events);
+  const vevents = all.filter((event) => event.type === 'VEVENT');
 
-  const bookings = Object.values(events)
-    .filter((event) => event.type === 'VEVENT' && event.start && event.end)
+  console.error(`DEBUG: ${all.length} calendar component(s), ${vevents.length} VEVENT(s)`);
+  vevents.forEach((event, i) => {
+    console.error(
+      `DEBUG [${i}] allDay=${event.start?.dateOnly === true}` +
+      ` recurring=${!!event.rrule}` +
+      ` status=${event.status || ''}` +
+      ` start=${event.start?.toISOString?.()}` +
+      ` end=${event.end?.toISOString?.()}`
+    );
+  });
+
+  const bookings = vevents
+    .filter((event) => event.start && event.end)
     .map((event) => {
       const isAllDay = event.start.dateOnly === true;
       const start = new Date(event.start);
