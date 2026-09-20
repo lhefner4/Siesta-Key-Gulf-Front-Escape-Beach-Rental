@@ -4,15 +4,23 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Calendar } from './ui/calendar';
 import { propertyData } from '../mock';
 
+// "YYYY-MM-DD" parses as UTC midnight via `new Date(str)`, which shifts a
+// day earlier once converted to a local timezone behind UTC (all of the US).
+// Parsing the parts directly builds the Date in local time instead.
+const parseLocalDate = (dateStr) => {
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return new Date(year, month - 1, day);
+};
+
 const AvailabilityCalendar = () => {
   const [selectedMonth, setSelectedMonth] = useState(new Date());
 
   // Convert booked dates to Date objects for the calendar
   const bookedDates = propertyData.bookedDates.flatMap(booking => {
     const dates = [];
-    const start = new Date(booking.start);
-    const end = new Date(booking.end);
-    
+    const start = parseLocalDate(booking.start);
+    const end = parseLocalDate(booking.end);
+
     for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
       dates.push(new Date(d));
     }
