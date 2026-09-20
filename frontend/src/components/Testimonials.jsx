@@ -1,9 +1,95 @@
-import React from 'react';
-import { Star, Quote } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
+import React, { useState } from 'react';
+import { Star, Quote, Send } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Textarea } from './ui/textarea';
+import { Label } from './ui/label';
+import { useToast } from '../hooks/use-toast';
 import { propertyData } from '../mock';
 
+// Same Formspree form as ContactForm.jsx — submissions here are tagged with
+// a distinct _subject so they're easy to tell apart from booking inquiries
+// in the same inbox.
+const FORMSPREE_FORM_ID = 'xzezebww';
+
+const StarRatingInput = ({ rating, hoverRating, onSelect, onHover, onLeave }) => (
+  <div
+    role="radiogroup"
+    aria-label="Star rating"
+    className="flex gap-1"
+    onMouseLeave={onLeave}
+  >
+    {[1, 2, 3, 4, 5].map((i) => {
+      const filled = i <= (hoverRating || rating);
+      return (
+        <button
+          key={i}
+          type="button"
+          onClick={() => onSelect(i)}
+          onMouseEnter={() => onHover(i)}
+          aria-label={`Rate ${i} star${i > 1 ? 's' : ''}`}
+          aria-pressed={i <= rating}
+        >
+          <Star
+            size={32}
+            className={`transition-colors cursor-pointer ${
+              filled ? 'fill-yellow-400 text-yellow-400' : 'text-slate-300'
+            }`}
+          />
+        </button>
+      );
+    })}
+  </div>
+);
+
 const Testimonials = () => {
+  const { toast } = useToast();
+  const [reviewName, setReviewName] = useState('');
+  const [rating, setRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [ratingError, setRatingError] = useState('');
+  const [reviewMessage, setReviewMessage] = useState('');
+  const [isSubmittingReview, setIsSubmittingReview] = useState(false);
+
+  const handleReviewSubmit = async (e) => {
+    e.preventDefault();
+
+    if (rating < 1) {
+      setRatingError('Please select a star rating');
+      return;
+    }
+    setRatingError('');
+    setIsSubmittingReview(true);
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(e.target)
+      });
+
+      if (!response.ok) throw new Error('Form submission failed');
+
+      toast({
+        title: "Review Submitted — Thank You!",
+        description: "We appreciate you taking the time to share your experience.",
+      });
+      setReviewName('');
+      setRating(0);
+      setHoverRating(0);
+      setReviewMessage('');
+    } catch (err) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again, or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmittingReview(false);
+    }
+  };
+
   return (
     <section id="reviews" className="py-20 bg-gradient-to-b from-sky-50 to-white">
       <div className="container mx-auto px-4">
@@ -59,11 +145,78 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <p className="text-slate-600 text-lg">
-            Join our growing list of happy guests and create your own memories!
+        {/* Leave a Review */}
+        <div className="max-w-2xl mx-auto mt-16">
+          <p className="text-center text-slate-600 text-lg mb-6">
+            Stayed with us? We'd love to hear about it!
           </p>
+          <Card className="border-sky-100 shadow-lg">
+            <CardHeader className="bg-gradient-to-r from-slate-50 to-sky-50 border-b border-sky-100">
+              <CardTitle className="text-slate-900">Leave a Review</CardTitle>
+            </CardHeader>
+            <CardContent className="p-6">
+              <form onSubmit={handleReviewSubmit} className="space-y-6">
+                <input type="hidden" name="_subject" value="New Review Submission - Siesta Key Gulf Front Escape" />
+                <input type="hidden" name="rating" value={rating} />
+
+                <div className="space-y-2">
+                  <Label htmlFor="reviewName">Your Name *</Label>
+                  <Input
+                    id="reviewName"
+                    name="name"
+                    value={reviewName}
+                    onChange={(e) => setReviewName(e.target.value)}
+                    required
+                    placeholder="Jane Doe"
+                    className="border-slate-300 focus:border-sky-500"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label>Your Rating *</Label>
+                  <StarRatingInput
+                    rating={rating}
+                    hoverRating={hoverRating}
+                    onSelect={setRating}
+                    onHover={setHoverRating}
+                    onLeave={() => setHoverRating(0)}
+                  />
+                  {ratingError && (
+                    <p className="text-sm text-red-600 mt-1">{ratingError}</p>
+                  )}
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="reviewMessage">Your Review *</Label>
+                  <Textarea
+                    id="reviewMessage"
+                    name="message"
+                    value={reviewMessage}
+                    onChange={(e) => setReviewMessage(e.target.value)}
+                    required
+                    placeholder="Tell us about your stay..."
+                    rows={5}
+                    className="border-slate-300 focus:border-sky-500 resize-none"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  disabled={isSubmittingReview}
+                  className="w-full bg-sky-600 hover:bg-sky-700 text-white text-lg py-6"
+                >
+                  {isSubmittingReview ? (
+                    'Submitting...'
+                  ) : (
+                    <>
+                      <Send size={20} className="mr-2" />
+                      Submit Review
+                    </>
+                  )}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
