@@ -1,6 +1,8 @@
 // Mock data for Siesta Key Gulf Front Escape
 // EASY IMAGE SWAPPING: Simply replace the URLs below with your actual property photos
 
+const p = process.env.PUBLIC_URL || '';
+
 export const propertyData = {
   name: "Siesta Key Gulf Front Escape",
   tagline: "Beach Rental • Unit G-201 • Excelsior Condominiums, Sarasota, Florida",
@@ -120,51 +122,43 @@ export const propertyData = {
   // Organized by category for easy management
   // Drop your photos into frontend/public/images/<category>/ and update the paths below
   images: {
-    hero: "/images/outside/hero.jpg", // 16:9 or wider — best gulf/exterior shot
+    hero: `${p}/images/outside/hero.jpg`,
 
     outsideViews: [
-      "/images/outside/outside-1.jpg", // Beach view
-      "/images/outside/outside-2.jpg", // Pool area
-      "/images/outside/outside-3.jpg", // Building exterior
-      "/images/outside/outside-4.jpg", // Sunset view
-      "/images/outside/outside-5.jpg", // Beach scene
-      "/images/outside/outside-6.jpg"  // Balcony view
+      `${p}/images/outside/outside-1.jpg`,
+      `${p}/images/outside/outside-2.jpg`,
+      `${p}/images/outside/outside-3.jpg`,
+      `${p}/images/outside/outside-4.jpg`,
+      `${p}/images/outside/outside-5.jpg`,
+      `${p}/images/outside/outside-6.jpg`,
     ],
 
     bedrooms: [
-      "/images/bedrooms/bedroom-1.jpg", // Master bedroom
-      "/images/bedrooms/bedroom-2.jpg", // Guest bedroom
-      "/images/bedrooms/bedroom-3.jpg", // Bedroom detail
-      "/images/bedrooms/bedroom-4.jpg", // Bathroom
-      "/images/bedrooms/bedroom-5.jpg", // Master bath
-      "/images/bedrooms/bedroom-6.jpg"  // Bedroom with view
+      `${p}/images/bedrooms/bedroom-1.jpg`,
+      `${p}/images/bedrooms/bedroom-2.jpg`,
+      `${p}/images/bedrooms/bedroom-3.jpg`,
+      `${p}/images/bedrooms/bedroom-4.jpg`,
+      `${p}/images/bedrooms/bedroom-5.jpg`,
+      `${p}/images/bedrooms/bedroom-6.jpg`,
+      `${p}/images/bedrooms/bedroom-7.jpg`,
+      `${p}/images/bedrooms/bedroom-8.jpg`,
     ],
 
     kitchen: [
-      "/images/kitchen/kitchen-1.jpg", // Kitchen overview
-      "/images/kitchen/kitchen-2.jpg", // Kitchen detail
-      "/images/kitchen/kitchen-3.jpg", // Dining area
-      "/images/kitchen/kitchen-4.jpg", // Appliances
-      "/images/kitchen/kitchen-5.jpg", // Breakfast bar
-      "/images/kitchen/kitchen-6.jpg"  // Kitchen counter
+      `${p}/images/kitchen/kitchen-1.jpg`,
+      `${p}/images/kitchen/kitchen-2.jpg`,
+      `${p}/images/kitchen/kitchen-3.jpg`,
     ],
 
     livingRoom: [
-      "/images/living-room/living-room-1.jpg", // Main living room
-      "/images/living-room/living-room-2.jpg", // Seating area
-      "/images/living-room/living-room-3.jpg", // Living room detail
-      "/images/living-room/living-room-4.jpg", // Open floor plan
-      "/images/living-room/living-room-5.jpg", // Interior with natural light
-      "/images/living-room/living-room-6.jpg"  // Living room toward balcony
+      `${p}/images/living-room/living-room-1.jpg`,
+      `${p}/images/living-room/living-room-2.jpg`,
+      `${p}/images/living-room/living-room-3.jpg`,
     ],
 
     guestBedroom: [
-      "/images/guest-bedroom/guest-bedroom-1.jpg",
-      "/images/guest-bedroom/guest-bedroom-2.jpg",
-      "/images/guest-bedroom/guest-bedroom-3.jpg",
-      "/images/guest-bedroom/guest-bedroom-4.jpg",
-      "/images/guest-bedroom/guest-bedroom-5.jpg",
-      "/images/guest-bedroom/guest-bedroom-6.jpg"
+      `${p}/images/guest-bedroom/guest-bedroom-1.jpg`,
+      `${p}/images/guest-bedroom/guest-bedroom-2.jpg`,
     ]
   },
 

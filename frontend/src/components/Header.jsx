@@ -50,12 +50,12 @@ const Header = () => {
             <span className={`text-xl font-bold tracking-wide transition-colors ${
               isScrolled ? 'text-sky-600' : 'text-white'
             } group-hover:text-sky-500`}>
-              Siesta Key Gulf Front
+              Siesta Key Gulf Front Escape
             </span>
             <span className={`text-sm font-light transition-colors ${
               isScrolled ? 'text-slate-600' : 'text-sky-100'
             }`}>
-              Escape Beach Rental
+              Beach Rental
             </span>
           </button>
 
