@@ -45,6 +45,9 @@ Single-page app using smooth-scroll navigation (no client-side routing). `App.js
 - `CORS_ORIGINS` — comma-separated allowed origins (default: `*`)
 
 ### Key Relationships
-- `ContactForm.jsx` currently submits locally (no backend call) — backend integration is pending
+- `ContactForm.jsx` posts to Formspree (`FORMSPREE_FORM_ID` constant at top of the file) — no backend call
 - `AvailabilityCalendar.jsx` reads booked dates from `mock.js` — not yet fetched from backend
 - `craco.config.js` wraps Create React App with webpack alias support and optional Emergent visual-edits integration
+
+## TODO
+- `FORMSPREE_FORM_ID` in `ContactForm.jsx` is still a placeholder (`'REPLACE_ME'`). Sign up free at formspree.io, connect the property inbox (`teri.excelsior201g@gmail.com` per `mock.js`), create a form, and paste the real form ID in. Until then the contact form fails on submit.

@@ -8,6 +8,10 @@ import { Label } from './ui/label';
 import { useToast } from '../hooks/use-toast';
 import { propertyData } from '../mock';
 
+// Create a free form at https://formspree.io, connect it to your email,
+// then replace this with your form's endpoint ID (looks like "xayzwkqr").
+const FORMSPREE_FORM_ID = 'REPLACE_ME';
+
 const ContactForm = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -32,9 +36,15 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission (this will be replaced with actual backend call later)
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(e.target)
+      });
+
+      if (!response.ok) throw new Error('Form submission failed');
+
       toast({
         title: "Inquiry Sent Successfully!",
         description: "We'll get back to you within 24 hours.",
@@ -48,7 +58,15 @@ const ContactForm = () => {
         guests: '',
         message: ''
       });
-    }, 1500);
+    } catch (err) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again, or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
