@@ -124,6 +124,21 @@ export const propertyData = {
       name: "Jennifer S.",
       text: "Wonderful condo, awesome views, easy access to everything, warm pool, hot tub is nice and hot, owners are very attentive. The beach is FABULOUS! You will not regret renting this condo and will want to book again. My family and I have been guests at this condo for 3 Christmas vacations and 1 spring break and we look forward to each visit.",
       rating: 5
+    },
+    {
+      name: "Cindy L.",
+      text: "Beautiful condo in a great town. The sunsets off the balcony are absolutely beautiful. I love the powder white beaches. The condo is well stocked, well maintained and has plenty of space. The complex has many amenities-pool and hot tub right down the steps and pickleball right across the street. I also love the location, you can walk down to several restaurants and shops or hop the trolley for a quick ride down to the Village. The owners are welcoming and friendly and respond quickly to any questions or concerns. We have been staying here for several years and can't wait for our next trip.",
+      rating: 5
+    },
+    {
+      name: "Angie B.",
+      text: "Location, location, location! This wonderful condominium is steps away from the soft, white sand of Siesta Key beach, making it the absolute perfect spot for a getaway. The condo is roomy, comfortable, and incredibly well-equipped with everything you could possibly want or need. We loved watching the amazing sunsets—the views are spectacular whether you're sitting in a beach chair or relaxing on the balcony. The kitchen is fully equipped and perfect for cooking meals at home, but the local restaurant scene is also just minutes away and easily accessible. We had a flawless stay and cannot recommend this rental enough!",
+      rating: 5
+    },
+    {
+      name: "Kylie",
+      text: "One of my absolute favorite places I've ever visited! It features a breathtaking view and serves as the ultimate spot to watch the sunset. It also offers effortless access to a beautiful beach, complete with complimentary beach chairs. Plus, it is just a short, easy walk to fantastic local shops, coffee, dining, and ice cream. I highly recommend this destination and cannot wait to return!",
+      rating: 5
     }
   ],
 
