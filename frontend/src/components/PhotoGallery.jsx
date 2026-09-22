@@ -56,7 +56,7 @@ const PhotoGallery = () => {
 
         {/* Gallery Tabs */}
         <Tabs defaultValue="outside" className="max-w-7xl mx-auto" onValueChange={setActiveTab}>
-          <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 gap-2 bg-slate-100 p-2 rounded-xl mb-8">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 gap-2 bg-slate-100 p-2 rounded-xl mb-8 h-auto">
             <TabsTrigger value="outside" className="data-[state=active]:bg-sky-600 data-[state=active]:text-white">
               Outside Views
             </TabsTrigger>
