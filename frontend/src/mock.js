@@ -139,6 +139,11 @@ export const propertyData = {
       name: "Kylie",
       text: "One of my absolute favorite places I've ever visited! It features a breathtaking view and serves as the ultimate spot to watch the sunset. It also offers effortless access to a beautiful beach, complete with complimentary beach chairs. Plus, it is just a short, easy walk to fantastic local shops, coffee, dining, and ice cream. I highly recommend this destination and cannot wait to return!",
       rating: 5
+    },
+    {
+      name: "Sinclair & Matthew W.",
+      text: "We absolutely loved staying in this condo! The location couldn't get any better, the amenities are wonderful and very well up kept! The condo was beautifully updated and extremely clean, all linens were comfortable, and the kitchen was well stocked. The view of the gulf was perfect. We will absolutely rent this condo again and could not recommend more!",
+      rating: 5
     }
   ],
 
